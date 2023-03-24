@@ -1,0 +1,61 @@
+<! DOCTYPE html>
+<html lang="pt_BR">
+<link rel="stylesheet" type="text/css" href="./css/style.css">
+<head>
+  <!-- Informações para o navegador-->
+  <title>Exercicio JS</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="./css/style.css">
+  <link rel="stylesheet" type="text/css" href="./css/imagem.css">
+
+</head>
+
+<header>
+  <h2> Formulário de teste </h2>
+
+</header>
+
+<section>
+  <nav>
+
+    <div id="imagem-nav">
+      <img src="./imagens/Jenny2.png" alt="Jenny">
+    </div>
+  </nav>
+  <article>
+    <h1> Insira os dados requisitados:</h1>
+
+    <h1>Formulário de Teste</h1>
+
+<form id="myForm" method="get">
+  <div>
+    <label for="num1">Número 1:</label>
+    <input type="number" name="num1" id="num1" placeholder="Insira um número" />
+  </div>
+  <div>
+    <label for="num2">Número 2:</label>
+    <input type="number" name="num2" id="num2" placeholder="Digite um número maior que o anterior" />
+  </div>
+  <button type="submit">Enviar</button>
+</form>
+
+<script>
+  const form = document.getElementById("myForm");
+
+  form.addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    const num1 = Number(document.getElementById("num1").value);
+    const num2 = Number(document.getElementById("num2").value);
+
+    if (num2 > num1) {
+      alert("Formulário enviado com sucesso!");
+      form.reset();
+    } else {
+      alert("O número 2 precisa ser maior que o número 1.");
+    }
+  });
+</script>
+</body>
+</html>
